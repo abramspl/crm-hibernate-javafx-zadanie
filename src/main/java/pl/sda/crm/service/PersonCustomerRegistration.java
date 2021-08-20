@@ -39,7 +39,8 @@ public class PersonCustomerRegistration {
     }
 
     private Boolean personExists(RegisterPersonForm form, Session session) {
-        return session.createQuery("select count(p) > 0  " +
+        return session.createQuery(
+                "select count(p) > 0  " +
                 "from Person p " +
                 "where p.lastName = ?1 and p.pesel.value = ?2",
                 Boolean.class)
