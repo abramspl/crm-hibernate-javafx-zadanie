@@ -15,7 +15,8 @@ public class Pesel {
     }
 
     public Pesel(String value) {
-        validate(value != null && value.matches("\\d{11}"), "pesel is invalid: " + value);
+        validate(value != null && value.matches("\\d{11}"),
+                "pesel is invalid: " + value);
         this.value = value;
     }
 
