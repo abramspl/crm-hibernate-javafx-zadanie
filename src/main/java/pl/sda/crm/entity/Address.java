@@ -1,6 +1,7 @@
 package pl.sda.crm.entity;
 
 import com.neovisionaries.i18n.CountryCode;
+import pl.sda.crm.service.RegisterAddressForm;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -35,6 +36,10 @@ public class Address {
         this.city = city;
         this.zipCode = zipCode;
         this.countryCode = requireNonNull(countryCode);
+    }
+
+    public static Address from(RegisterAddressForm form){
+        return new Address(form.getStreet(),form.getCity(),form.getZipCode(),form.getCountryCode());
     }
 
     public UUID getId() {

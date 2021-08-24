@@ -18,10 +18,14 @@ public abstract class Customer {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
     private List<Address> addresses;
+//    @OneToOne
+//    @JoinColumn(name = "customer_id")
+//    private PremiumStatus premiumStatus;
 
     public Customer() {
         this.id = UUID.randomUUID();
         this.addresses = new ArrayList<>();
+//        this.premiumStatus = premiumStatus;
     }
 
     public UUID getId() {
