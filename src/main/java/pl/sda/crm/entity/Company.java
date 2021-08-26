@@ -20,7 +20,7 @@ public class Company extends Customer {
     @Embedded
     private Nip nipNumber;
 
-    private Company(){
+    private Company(String xcx, String s){
     }
 
     public Company(String name, Nip nipNumber) {
